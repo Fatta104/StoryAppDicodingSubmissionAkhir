@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F1F1F1"
+    tools:context=".ui.RegisterActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/banner_register"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/register"
+            app:lottie_loop="true"
+            tools:alpha="100" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/tittle_home"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:lineHeight="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+            android:alpha="0"
+            tools:alpha= "100"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signInButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_button"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/signUpButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/banner_register"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            android:layout_marginTop="30dp"
+            android:text="@string/button_sign_in"
+            android:layout_marginEnd="10dp"
+            android:alpha="0"
+            tools:alpha= "100"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signUpButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_button_upload"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/banner_register"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/signInButton"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            android:layout_marginTop="30dp"
+            android:text="@string/button_register"
+            android:alpha="0"
+            android:layout_marginStart="10dp"
+            tools:alpha= "100"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.56"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.StoryLocationActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_back_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_keyboard_backspace_24"
+        android:backgroundTint="#403636"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="32dp"
+        map:tint="@null"
+        android:contentDescription="@string/back_to_main" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_option_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/baseline_layers_24"
+        android:backgroundTint="#403636"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        map:tint="@null"
+        android:visibility="visible"
+        android:contentDescription="@string/back_to_main" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/option_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="130dp"
+        android:visibility="visible"
+        android:alpha="0"
+        tools:alpha="100"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btn_default_map"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/default_map"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/default_map" />
+            <ImageView
+                android:id="@+id/btn_satellite_map"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/satellite"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/satellite_map" />
+            <ImageView
+                android:id="@+id/btn_terrain_map"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/terrain"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/terrain_map" />
+            <ImageView
+                android:id="@+id/btn_hybrid_map"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/hybrid_map"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/hybrid_map" />
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/box_show"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/white"
+        android:padding="16dp"
+        map:cardElevation="8dp"
+        map:cardCornerRadius="16dp"
+        android:visibility="visible"
+        android:alpha="0"
+        tools:alpha="100">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_sender"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/my_home"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:layout_marginTop="5dp"
+                android:text="@string/dummy_desc"
+                android:textSize="14sp"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toBottomOf="@id/tv_sender" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/dummy_address"
+                android:textSize="14sp"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintBottom_toBottomOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_to_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/map_to_detail"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_upload"
+                android:textColor="@color/white"
+                android:shadowRadius="20"
+                android:layout_marginEnd="10dp"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintTop_toTopOf="@id/tv_sender"
+                map:layout_constraintBottom_toTopOf="@id/btn_hide"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_hide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info_close_window"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button"
+                android:textColor="@color/white"
+                android:shadowRadius="20"
+                android:layout_marginEnd="10dp"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintTop_toBottomOf="@id/btn_to_detail"
+                map:layout_constraintBottom_toBottomOf="@id/tv_location"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
